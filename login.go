@@ -199,7 +199,7 @@ func initLogin() {
 						if s.GetImType() == "wxmp" {
 							rt := "八九不离十登录成功啦，10秒后对我说“查询”以确认登录成功。"
 							if jd_cookie.Get("xdd_url") != "" {
-								rt += "此外，你可以在30秒内输入QQ号："
+								rt += "请输入“QQ”号或输入“1”跳过，30秒后自动跳过..."
 							}
 							return rt
 						}
@@ -224,20 +224,7 @@ func initLogin() {
 						if !jd_cookie.GetBool("test", true) {
 							if time.Now().Unix()%99 == 0 {
 								// 								s.Reply(
-								// 									`囤囤大米 以备特殊情况
-								// --
-								// 京东大米合集,大家按需
-								// 庭享五常稻花香10斤,29.9
-								// https://u.jd.com/yMYM2X6
-								// 天禹珍珠盘锦大米10斤,23.9
-								// https://u.jd.com/ytYzKcc
-								// 喜家德五常香米10斤,24.9
-								// https://u.jd.com/ytYtNSO
-								// 森王晶珍五常稻花香10斤,23.9
-								// https://u.jd.com/yCYKOkG
-								// 龙凤海田五常稻花香10斤,23.9
-								// https://u.jd.com/yCYsvZc
-								// 					`)
+								// 									``)
 							}
 						} else {
 							ad := jd_cookie.Get("ad")
@@ -424,7 +411,7 @@ func initLogin() {
 								} else {
 									rt := "八九不离十登录成功啦，60秒后对我说“查询”已确认登录成功。"
 									if jd_cookie.Get("xdd_url") != "" {
-										rt += "此外，你可以在30秒内输入QQ号："
+										rt += "请输入“QQ”号或输入“1”跳过，30秒后自动跳过..."
 									}
 									s.Reply(rt)
 								}
